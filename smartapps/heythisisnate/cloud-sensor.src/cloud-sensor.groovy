@@ -29,8 +29,10 @@ definition(
 
 preferences {
 	section("Select devices to monitor") {
-  	input "contactSensors", "capability.contactSensor", multiple:true, required:false
-    input "motionSensors", "capability.motionSensor", multiple:true, required:false
+  	input "contactSensors", "capability.contactSensor", title: "Contact Sensors", multiple:true, required:false
+    input "motionSensors", "capability.motionSensor", title: "Motion Sensors", multiple:true, required:false
+    input "shockSensors", "capability.shockSensor", title: "Shock Sensors", multiple:true, required:false
+    input "smokeDetectors", "capability.smokeDetector", title: "Smoke Detectors", multiple:true, required:false
 	}
 }
 
@@ -45,7 +47,7 @@ mappings {
 def handle_event() {
   def event = request.JSON
   def sensor_id = event.sensor_id 
-  def allSensors = contactSensors + motionSensors
+  def allSensors = contactSensors + motionSensors + smokeDetectors + shockSensors
   def device = allSensors.find { 
     sensor_id == it.id
   }
