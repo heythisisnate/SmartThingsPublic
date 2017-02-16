@@ -18,27 +18,27 @@
  */
  
 metadata {
-  definition (name: "NodeMCU Connected Shock Sensor", namespace: "heythisisnate", author: "Nate") {
-    capability "Shock Sensor"
+  definition (name: "NodeMCU Connected Sound Sensor", namespace: "heythisisnate", author: "Nate") {
+    capability "Sound Sensor"
     command "open"
     command "close"
   }
 
   tiles {
-    standardTile("shock", "device.shock", width: 2, height: 2) {
+    standardTile("sound", "device.sound", width: 2, height: 2) {
       state "detected", label: '${name}', icon: "st.alarm.beep.beep"
       state "clear", label: '${name}', icon: "st.alarm.beep.beep"
     }
 
-    main "shock"
-    details "shock"
+    main "sound"
+    details "sound"
   }
 }
 
 def open() {
-  sendEvent(name: "shock", value: "detected")
+  sendEvent(name: "sound", value: "detected")
 }
 
 def close() {
-  sendEvent(name: "shock", value: "clear")
+  sendEvent(name: "sound", value: "clear")
 }
