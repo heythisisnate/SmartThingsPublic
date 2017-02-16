@@ -19,7 +19,7 @@
  
 metadata {
   definition (name: "NodeMCU Connected Shock Sensor", namespace: "heythisisnate", author: "Nate") {
-    capability "Smoke Detector"
+    capability "Shock Sensor"
     command "open"
     command "close"
   }
