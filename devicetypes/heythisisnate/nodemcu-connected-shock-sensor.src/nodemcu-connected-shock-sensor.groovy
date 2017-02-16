@@ -26,8 +26,8 @@ metadata {
 
   tiles {
     standardTile("shock", "device.shock", width: 2, height: 2) {
-      state "detected", label: '${name}', icon: "st.unknown.thing.thing-circle"
-      state "clear", label: '${name}', icon: "st.unknown.thing.thing-circle"
+      state "detected", label: '${name}', icon: "st.alarm.beep.beep"
+      state "clear", label: '${name}', icon: "st.alarm.beep.beep"
     }
 
     main "shock"
